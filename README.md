@@ -1,2 +1,2 @@
-# EventKick-NodeJS
+# EventKick
 EentKick reinvented.
