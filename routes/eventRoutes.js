@@ -1,16 +1,8 @@
-const express = require("express");
-const router = express.Router();
-const {
-  getContacts,
-  createContact,
-  getContact,
-  updateContact,
-  deleteContact,
-} = require("../controllers/eventController");
-const validateToken = require("../middleware/validateTokenHandler");
-
+const express = require("express"); const router = express.Router(); const { getEvents, createEvent, getEvent, updateEvent, deleteEvent, addFavorite, removeFavorite, getFavorites, addComment, removeComment, getComments, } = require("../controllers/eventController"); const validateToken = require("../middleware/validateTokenHandler");
 router.use(validateToken);
-router.route("/").get(getContacts).post(createContact);
-router.route("/:id").get(getContact).put(updateContact).delete(deleteContact);
+router.route("/").get(getEvents).post(createEvent);
+router.route("/:id").get(getEvent).put(updateEvent).delete(deleteEvent);
+router.route("/:id/favorites").post(addFavorite).delete(removeFavorite).get(getFavorites);
+router.route("/:id/comments").post(addComment).delete(removeComment).get(getComments);
 
 module.exports = router;
