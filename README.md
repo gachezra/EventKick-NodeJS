@@ -1,3 +1,4 @@
 # EventKick
-EentKick reinvented.
+EventKick reinvented.
+#
 WhatTheAI
